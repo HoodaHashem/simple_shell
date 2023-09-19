@@ -50,7 +50,10 @@ char *_strtok(char *string, char *d)
 	}
 	while (is_delimiter(in[0], d) && in[0] != '\0')
 	{
-
+	if (in[0] == '#')
+	{
+		break;
+	}
 	in++;
 	}
 	if (in[0] == '\0')

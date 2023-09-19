@@ -1,5 +1,8 @@
 #include "main.h"
-
+/**
+ * prompt - normal function
+ * @status: normal status
+ */
 void prompt(int status)
 {
 	if (!status)
@@ -27,6 +30,7 @@ void prompt(int status)
 		if (isatty(STDOUT_FILENO))
 		{
 			write(STDOUT_FILENO, "\n", 1);
+
 			fflush(STDIN_FILENO);
 		}
 	}

@@ -27,8 +27,9 @@ typedef struct {
 
 extern char **environ;
 
+char *forbetty2(char *cmd, char *p, char *pcpy, char *pk, char *fp, char *ccpy);
 int _execve(char *arguments[], __attribute__((unused)) char *buffer, char *argv, int c);
-int bltin(char *cmd[], char *buf, __attribute__((unused)) char *av, int *f);
+int bltin(char *cmd[], int *f);
 int err_handl(char *av, int ac, char *cmd);
 void prompt(int status);
 void signalhandle(int owrsignal);
@@ -49,7 +50,6 @@ char *_strcat(char *destenation, char *source);
 void compathandcmd(char *filepath, char *cmd, char *token);
 char *getenvvars(char *path);
 int is_delimiter(char c, char *d);
-char  _getline(char** buffer, size_t* buffersize, FILE* stream);
 char *_strtok(char *string, char *d);
-
+ssize_t _getline(char **buffer, size_t *n, FILE *stream);
 #endif

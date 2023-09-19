@@ -1,16 +1,20 @@
 #include "main.h"
-
+/**
+ * getenvvars - normal function
+ * @path: normal path
+ * Return: gustavo
+ */
 char *getenvvars(char *path)
 {
-    size_t l = _strlen(path);
+	size_t l = _strlen(path);
 	int i;
-    
-    for (i = 0; environ[i] != NULL; i++)
-    {
-        if (_strncmp(path, environ[i], l) == 0 && environ[i][l] == '=')
-        {
-            return (environ[i] + l + 1);
-        }
-    }
-    return (NULL);
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		if (_strncmp(path, environ[i], l) == 0 && environ[i][l] == '=')
+		{
+			return (environ[i] + l + 1);
+		}
+	}
+	return (NULL);
 }

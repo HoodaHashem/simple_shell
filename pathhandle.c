@@ -1,82 +1,70 @@
 #include "main.h"
+/**
+ * pathhandle - normal function
+ * @command: normal command
+ * Return: gustavo
+ */
+char *pathhandle(char *command)
+{
+	char *pathg, *pathcpyg, *pathtokeng, *filepathg, *cmdcpyg;
+	struct stat buffer;
 
-char* pathhandle(char* command) {
-
-  char* path, *path_copy, *path_token, *file_path, *cmd_copy;
-
-  struct stat buffer;
-
-  if((cmd_copy = forbetty(command)) != NULL) {
-    return cmd_copy;
-  }
-
-  path = getenvvars("PATH");
-
-  if(path) {
-
-    path_copy = _strdup(path);
-    if(path_copy == NULL) {
-      return NULL;
-    }
-
-    path_token = strtok(path_copy, ":");
-
-    while(path_token != NULL) {
-
-      file_path = malloc(strlen(path_token) + strlen(command) + 2);
-      if(file_path == NULL) {
-        free(path_copy);
-        return NULL; 
-      }
-
-      compathandcmd(file_path, command, path_token);
-
-      if(stat(file_path, &buffer) == 0) {
-
-        cmd_copy = _strdup(file_path);
-        free(path_copy);
-        free(file_path);
-        return cmd_copy;
-
-      }
-
-      free(file_path);
-      file_path = NULL;
-
-      path_token = strtok(NULL, ":");
-
-    }
-
-    free(path_copy);
-    path_copy = NULL;
-
-  }
-
-  if(stat(command, &buffer) == 0) {
-    
-    cmd_copy = _strdup(command);
-    return cmd_copy;
-
-  }
-
-  return NULL;
-
+	cmdcpyg = forbetty(command);
+	if (cmdcpyg != NULL)
+		return (cmdcpyg);
+	pathg = getenvvars("PATH");
+	if (pathg)
+	{
+		pathcpyg = _strdup(pathg);
+		if (pathcpyg == NULL)
+			return (NULL);
+		pathtokeng = strtok(pathcpyg, ":");
+		while (pathtokeng != NULL)
+		{
+			filepathg = malloc(_strlen(pathtokeng) + _strlen(command) + 2);
+			if (filepathg == NULL)
+			{
+				free(pathcpyg);
+				return (NULL);
+			}
+			compathandcmd(filepathg, command, pathtokeng);
+			if (stat(filepathg, &buffer) == 0)
+			{
+				cmdcpyg = _strdup(filepathg);
+				free(pathcpyg);
+				free(filepathg);
+				return (cmdcpyg);
+			}
+			free(filepathg);
+			filepathg = NULL;
+			pathtokeng = strtok(NULL, ":");
+		}
+		free(pathcpyg);
+		pathcpyg = NULL;
+	}
+	if (stat(command, &buffer) == 0)
+	{
+		cmdcpyg = _strdup(command);
+		return (cmdcpyg);
+	}
+	return (NULL);
 }
+/**
+ * forbetty - duuh the name!!
+ * @lol: normal lol
+ * Return: gustavo
+ */
 
-char* forbetty(char* cmd) {
+char *forbetty(char *lol)
+{
+	struct stat buf;
 
-  struct stat buf;
-
-  if(cmd[0] == '/' || cmd[0] == '.') {
-
-    if(stat(cmd, &buf) == 0) {
-    
-      return _strdup(cmd);
-
-    }
-
-  }
-
-  return NULL;
-
+	if (lol[0] == '/' || lol[0] == '.')
+	{
+		if (stat(lol, &buf) == 0)
+		{
+			return (_strdup(lol));
+		}
+	}
+	return (NULL);
 }

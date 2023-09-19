@@ -40,6 +40,17 @@ char *_strtok(char *string, char *d)
 	char *token;
 	int i = 0;
 
+	while (skip[i])
+
+           {
+        if (skip[i][0] == '#' && skip[i][1] == '\0')
+        {
+        break;
+        }
+              i++;
+      skip[i] = _strtok(NULL, " \n");
+           }
+
 	if (string != NULL)
 	{
 	in = string;
@@ -50,10 +61,6 @@ char *_strtok(char *string, char *d)
 	}
 	while (is_delimiter(in[0], d) && in[0] != '\0')
 	{
-	if (in[0] == '#')
-	{
-		break;
-	}
 	in++;
 	}
 	if (in[0] == '\0')
@@ -69,10 +76,6 @@ char *_strtok(char *string, char *d)
 	in = &in[i + 1];
 	while (is_delimiter(in[0], d) && in[0] != '\0')
 	{
-		if (in[0] == '#')
-	{
-		break;
-	}
 	in++;
 	}
 	return (token);

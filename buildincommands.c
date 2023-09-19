@@ -20,10 +20,6 @@ int bltin(char *cmd[], int *f, char *buffer)
 	}
 	if (_strcmp(cmd[0], "exit") == 0)
 	{
-		if (cmd[1])
-			exitstatus = _atoi(cmd[1]);
-		else
-			exitstatus = childstatus;
 		free(buffer), exit(exitstatus);
 	}
 	if (_strcmp(cmd[0], "env") == 0 || _strcmp(cmd[0], "printenv") == 0)

@@ -6,47 +6,21 @@
  */
 char *pathhandle(char *command)
 {
-	char *pathg, *pathcpyg, *pathtokeng, *filepathg, *cmdcpyg;
-	struct stat buffer;
+	char *gustavo, *pathg , *pathcpyg, *pathtokeng, *filepathg, *cmdcpyg;
+	gustavo = NULL;
+	pathg = NULL;
+	pathcpyg = NULL;
+	pathtokeng = NULL;
+	filepathg = NULL;
+	cmdcpyg = NULL;
 
 	cmdcpyg = forbetty(command);
 	if (cmdcpyg != NULL)
 		return (cmdcpyg);
 	pathg = getenvvars("PATH");
-	if (pathg)
-	{
-		pathcpyg = _strdup(pathg);
-		if (pathcpyg == NULL)
-			return (NULL);
-		pathtokeng = strtok(pathcpyg, ":");
-		while (pathtokeng != NULL)
-		{
-			filepathg = malloc(_strlen(pathtokeng) + _strlen(command) + 2);
-			if (filepathg == NULL)
-			{
-				free(pathcpyg);
-				return (NULL);
-			}
-			compathandcmd(filepathg, command, pathtokeng);
-			if (stat(filepathg, &buffer) == 0)
-			{
-				cmdcpyg = _strdup(filepathg);
-				free(pathcpyg);
-				free(filepathg);
-				return (cmdcpyg);
-			}
-			free(filepathg);
-			filepathg = NULL;
-			pathtokeng = strtok(NULL, ":");
-		}
-		free(pathcpyg);
-		pathcpyg = NULL;
-	}
-	if (stat(command, &buffer) == 0)
-	{
-		cmdcpyg = _strdup(command);
-		return (cmdcpyg);
-	}
+	gustavo = forbetty2(command, pathg, pathcpyg, pathtokeng, filepathg, cmdcpyg);
+	if (gustavo != NULL)
+		return (gustavo);
 	return (NULL);
 }
 /**

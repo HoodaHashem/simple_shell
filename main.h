@@ -24,6 +24,11 @@
  * @count_his: gustavo
  */
 
+
+	typedef struct str_r {
+	int str_input;
+	} str_r;
+
 typedef struct lol
 {
 	int descrip;
@@ -61,4 +66,7 @@ char *getenvvars(char *path);
 int is_delimiter(char c, char *d);
 char *_strtok(char *string, char *d);
 ssize_t _getline(char **buffer, size_t *n, FILE *stream);
+int check_mode(str_r *p);
+int convert_str(char *conv_str);
+int _atoi(const char *str);
 #endif

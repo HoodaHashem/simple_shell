@@ -43,14 +43,12 @@ char *_strtok(char *string, char *d)
 	while (skip[i])
 
            {
-        if (skip[i][0] == '#' && skip[i][1] == '\0')
+        if (in[i][0] == '#' && in[i][1] == '\0')
         {
         break;
         }
               i++;
-      skip[i] = _strtok(NULL, " \n");
-           }
-
+	   }
 	if (string != NULL)
 	{
 	in = string;

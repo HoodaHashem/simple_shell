@@ -24,22 +24,15 @@
  * @count_his: gustavo
  */
 
-	typedef struct str_r {
-	int str_input;
-	} str_r;
-
-
-
-
-	typedef struct lol
-	{
+typedef struct lol
+{
 	int descrip;
 	char *str_buff;
 	int type;
 	int flag;
 	int count_his;
-} lol;
 
+} info_s;
 
 extern char **environ;
 
@@ -53,9 +46,9 @@ char *inttostr(unsigned int n);
 void arrayrev(char *s, int len);
 int intlength(unsigned int n);
 void sign_res(__attribute__((unused)) int sig_num);
-char *forbetty(char *cmd);
 void check_input(info_s *inf);
 char *user_input(info_s *inf);
+char *forbetty(char *cmd);
 int _strncmp(const char *str1, const char *str2, size_t n);
 int _strlen(char *str);
 char *_strdup(char *str);
@@ -68,7 +61,4 @@ char *getenvvars(char *path);
 int is_delimiter(char c, char *d);
 char *_strtok(char *string, char *d);
 ssize_t _getline(char **buffer, size_t *n, FILE *stream);
-int convert_str(char *conv_str);
-int check_mode(str_r *p);
-int _atoi(const char *str);
 #endif

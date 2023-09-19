@@ -69,6 +69,10 @@ char *_strtok(char *string, char *d)
 	in = &in[i + 1];
 	while (is_delimiter(in[0], d) && in[0] != '\0')
 	{
+		if (in[0] == '#')
+	{
+		break;
+	}
 	in++;
 	}
 	return (token);

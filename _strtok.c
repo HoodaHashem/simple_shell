@@ -11,9 +11,9 @@
 int is_delimiter(char c, char *d)
 {
 
-	while (*d != '\0')	
+	while (*d != '\0')
 	{
-	      
+
 	if (c == *d)
 	{
 	return (1);
@@ -39,7 +39,7 @@ char *_strtok(char *string, char *d)
 	static char *in;
 	char *token;
 	int i = 0;
-	
+
 	if (string != NULL)
 	{
 	in = string;
@@ -50,10 +50,10 @@ char *_strtok(char *string, char *d)
 	}
 	while (is_delimiter(in[0], d) && in[0] != '\0')
 	{
-		if(in[0] == '#')
-		{
-			break;
-		}
+	if (in[0] == '#')
+	{
+	break;
+	}
 	in++;
 	}
 	if (in[0] == '\0')
@@ -73,9 +73,7 @@ char *_strtok(char *string, char *d)
 	}
 	return (token);
 	}
-
 	}
-
 	in = NULL;
 	return (token);
 }

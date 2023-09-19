@@ -38,7 +38,7 @@ extern char **environ;
 
 char *betty2(char *cmd, char *p, char *pcpy, char *pk, char *fp, char *ccpy);
 int _execve(char *arguments[], char *argv, int c);
-int bltin(char *cmd[], int *f);
+int bltin(char *cmd[], int *f, char *buffer);
 int err_handl(char *av, int ac, char *cmd);
 void prompt(int status);
 void signalhandle(int owrsignal);

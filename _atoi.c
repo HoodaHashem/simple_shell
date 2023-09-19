@@ -1,11 +1,5 @@
 #include "main.h"
 
-	typedef struct str_r {
-	int str_input;
-} str_r;
-
-
-
 	int check_mode(str_r *p) {
 	return (isatty(STDIN_FILENO) && p->str_input <= 2);
 }

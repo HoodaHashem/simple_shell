@@ -25,9 +25,10 @@
  */
 
 
-	typedef struct str_r {
+typedef struct lol2
+{
 	int str_input;
-	} str_r;
+} str_r;
 
 typedef struct lol
 {

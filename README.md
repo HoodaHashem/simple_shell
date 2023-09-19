@@ -30,7 +30,3 @@ To use the program, follow these steps:
 ## Credits
 
 This program was created by `[Hooda Hashem && Yasmen Abusanoga]`
-
-
-
-

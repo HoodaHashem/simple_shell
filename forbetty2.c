@@ -18,7 +18,7 @@ char *forbetty2(char *cmd, char *p, char *pcpy, char *pk, char *fp, char *ccpy)
 		pcpy = _strdup(p);
 		if (pcpy == NULL)
 			return (NULL);
-		pk = strtok(pcpy, ":");
+		pk = _strtok(pcpy, ":");
 		while (pk != NULL)
 		{
 			fp = malloc(_strlen(pk) + _strlen(cmd) + 2);
@@ -37,7 +37,7 @@ char *forbetty2(char *cmd, char *p, char *pcpy, char *pk, char *fp, char *ccpy)
 			}
 			free(fp);
 			fp = NULL;
-			pk = strtok(NULL, ":");
+			pk = _strtok(NULL, ":");
 		}
 		free(pcpy);
 		pcpy = NULL;

@@ -25,14 +25,14 @@ int main(__attribute__((unused)) int argc, char *argv[])
 			prompt(1);
 			break;
 		}
-		buffer[getlineread - 1] = '\0', cmd = strtok(buffer, " \n");
+		buffer[getlineread - 1] = '\0', cmd = _strtok(buffer, " \n");
 		if (cmd != NULL)
 		{
 			c = 0;
 			command[c++] = cmd;
 			for (; c < 20; c++)
 			{
-				command[c] = strtok(NULL, "\n ");
+				command[c] = _strtok(NULL, "\n ");
 				if (command[c] == NULL)
 					break;
 			}

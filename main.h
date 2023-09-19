@@ -68,6 +68,5 @@ int is_delimiter(char c, char *d);
 char *_strtok(char *string, char *d);
 ssize_t _getline(char **buffer, size_t *n, FILE *stream);
 int check_mode(str_r *p);
-int convert_str(char *conv_str);
-int _atoi(const char *str);
+int _atoi(char *conv_str);
 #endif

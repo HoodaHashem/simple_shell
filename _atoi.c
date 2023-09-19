@@ -6,7 +6,7 @@
 
 
 
-	int convert_str(char *conv_str) {
+	int _atoi(char *conv_str) {
 
 	int count, buffer = 1, is_count = 0, x;
 	unsigned int output = 0;

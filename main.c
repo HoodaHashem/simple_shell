@@ -36,7 +36,9 @@ int main(__attribute__((unused)) int argc, char *argv[])
 				if (command[c] == NULL)
 					break;
 			}
-			b = bltin(command, &looping, buffer);
+			if (_strcmp(command[0], "exit") == 0)
+			       free(buffer),exit(childstatus);	
+			b = bltin(command, &looping);
 			childstatus = b;
 			command[c] = NULL;
 			if (b)

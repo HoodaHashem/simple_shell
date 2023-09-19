@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * forbetty2 - normal function
+ * betty2 - normal function
  * @p:gustavo
  * @pcpy:gustavo
  * @pk: gustavo
@@ -9,7 +9,7 @@
  * @cmd: gustavo
  * Return: gustavo
  */
-char *forbetty2(char *cmd, char *p, char *pcpy, char *pk, char *fp, char *ccpy)
+char *betty2(char *cmd, char *p, char *pcpy, char *pk, char *fp, char *ccpy)
 {
 	struct stat buffer;
 

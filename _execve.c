@@ -3,7 +3,6 @@
 /**
  *_execve - executes a program specified by the arguments
  *@arguments:array
- *@buffer:pointer
  *@argv:pointer
  *@c:integer
  *Return:childexit
@@ -12,8 +11,7 @@
  */
 
 
-int _execve(char *arguments[], __attribute__((unused))
-		char *buffer, char *argv, int c)
+int _execve(char *arguments[], char *argv, int c)
 {
 	pid_t mypid;
 	int childexit = 0;

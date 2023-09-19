@@ -42,7 +42,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
 			childstatus = b;
 			command[c] = NULL;
 			if (b)
-				childstatus = _execve(command, buffer, argv[0], looping);
+				childstatus = _execve(command, argv[0], looping);
 		}
 	}
 	free(buffer);

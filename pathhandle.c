@@ -6,7 +6,8 @@
  */
 char *pathhandle(char *command)
 {
-	char *gustavo, *pathg , *pathcpyg, *pathtokeng, *filepathg, *cmdcpyg;
+	char *gustavo, *pathg, *pathcpyg, *pathtokeng, *filepathg, *cmdcpyg;
+
 	gustavo = NULL;
 	pathg = NULL;
 	pathcpyg = NULL;
@@ -18,7 +19,7 @@ char *pathhandle(char *command)
 	if (cmdcpyg != NULL)
 		return (cmdcpyg);
 	pathg = getenvvars("PATH");
-	gustavo = forbetty2(command, pathg, pathcpyg, pathtokeng, filepathg, cmdcpyg);
+	gustavo = betty2(command, pathg, pathcpyg, pathtokeng, filepathg, cmdcpyg);
 	if (gustavo != NULL)
 		return (gustavo);
 	return (NULL);
